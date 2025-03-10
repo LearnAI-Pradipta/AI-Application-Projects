@@ -1,0 +1,5 @@
+#Command to ignore the .venv folder
+.venv/
+
+#Exclude DotEnv Configuration File
+.env
