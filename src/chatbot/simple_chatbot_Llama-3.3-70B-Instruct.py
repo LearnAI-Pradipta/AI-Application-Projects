@@ -1,7 +1,9 @@
-# How your brain works - Chatbot app to get your query resolved.
-# Using OpenAi model we are going to create a chatbot application which is going to use the RAG architecture. 
-# We are using the LangChain framework to implement the ChatBot. This application is going to read a PDF and a webpage to get a 
-# proper context about the topic and use the same context to create proper promt and at last invoke LLM to get a proper response of User's query. 
+# A Simple Chatbot app to get your query resolved.
+# Using Llama-3.3-70B-Instruct model we are going to create a chatbot application. 
+# We are using the LangChain framework to implement the ChatBot. 
+
+# Model Name: Llama-3.3-70B-Instruct
+# Usage Rate limit tier = High
 # ----------------------------------------------------------------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -26,19 +28,19 @@ github_base_url = "https://models.inference.ai.azure.com"
 ### Create a Promt using the Prompt Template
 prompt = ChatPromptTemplate.from_messages(
     [
-        ("system","You are a helpful assistant that translates English to Bengali. Translate the user sentence."),
+        ("system","You are a helpful assistant that translates English to Hindi. Translate the user sentence."),
         ("user","Question:{question}")
     ]
 )
 
 ### Define the Streamlit framework
-st.title('LangChain Demo with OPENAI API')
+st.title('LangChain Demo with Llama-3.3 API')
 input_text = st.text_input('Provide an input')
 
 
 ### Create the llm object by mentioning the model name and the base url. 
 ### The api_key is getting from OPENAI_API_KEY environment veriable.
-llm = ChatOpenAI(model="gpt-4o-mini",base_url=github_base_url)
+llm = ChatOpenAI(model="Llama-3.3-70B-Instruct",base_url=github_base_url)
 
 
 ### Creating a output parser and creating a chain of prompt, llm and output parser to invoke the LLM model

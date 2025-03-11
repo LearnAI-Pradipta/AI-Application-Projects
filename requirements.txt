@@ -1,3 +1,8 @@
 python-dotenv
 streamlit
 langchain_openai
+#For creating the API
+langserve
+fastapi
+uvicorn
+sse_starlette
